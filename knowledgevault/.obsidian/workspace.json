@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Turbo.md",
+                "file": "Turborepo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Turbo"
+              "title": "Turborepo"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Turbo.md",
+                "file": "Turborepo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Turbo"
+              "title": "Backlinks for Turborepo"
             }
           },
           {
@@ -113,27 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Turbo.md",
+                "file": "Turborepo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Turbo"
-            }
-          },
-          {
-            "id": "2b0547712c67fe8a",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-tags",
-              "title": "Tags"
+              "title": "Outgoing links from Turborepo"
             }
           },
           {
@@ -142,13 +127,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Turbo.md",
+                "file": "Turborepo.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Turbo"
+              "title": "Outline of Turborepo"
             }
           },
           {
@@ -189,7 +174,7 @@
     "Glossary.md",
     "JavaScript/Operators.md",
     "Git.md",
-    "Turbo.md",
+    "Turborepo.md",
     "JavaScript/Built-in Objects/Promises.md",
     "JavaScript/Built-in Objects/Objects.md",
     "JavaScript/Network Requests/FormData.md",
