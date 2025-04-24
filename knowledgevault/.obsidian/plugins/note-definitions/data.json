@@ -18,5 +18,6 @@
     "maxHeight": 150,
     "popoverDismissEvent": "click",
     "enableDefinitionLink": true
-  }
+  },
+  "defFolder": "Definitions"
 }

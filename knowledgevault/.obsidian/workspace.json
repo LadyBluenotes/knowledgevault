@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "2bca94a8874c2652",
+        "id": "510badc1aa5a988d",
         "type": "tabs",
         "children": [
           {
-            "id": "824c91db39e6f4b9",
+            "id": "5106faa44a1f81eb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Turborepo.md",
+                "file": "Computer Science/Big O Notation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Turborepo"
+              "title": "Big O Notation"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 220.5,
+    "collapsed": true
   },
   "right": {
     "id": "4ee7edcc9c21401c",
@@ -149,37 +150,49 @@
               "icon": "lucide-archive",
               "title": "All properties"
             }
+          },
+          {
+            "id": "8d3cfdfb461a2ae4",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "obsidian-git:Open Git source control": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "command-palette:Open command palette": false
     }
   },
-  "active": "824c91db39e6f4b9",
+  "active": "5106faa44a1f81eb",
   "lastOpenFiles": [
-    "Glossary.md",
+    "Definitions/All.md",
+    "Computer Science/Big O Notation.md",
+    "Definitions/Glossary_prev.md",
+    "Definitions",
+    "Untitled.md",
     "JavaScript/Operators.md",
-    "Git.md",
+    "TypeScript/Types.md",
     "Turborepo.md",
+    "Computer Science",
+    "Git.md",
     "JavaScript/Built-in Objects/Promises.md",
     "JavaScript/Built-in Objects/Objects.md",
     "JavaScript/Network Requests/FormData.md",
     "JavaScript/Network Requests/XMLHttpRequest.md",
-    "TypeScript/Types.md",
     "JavaScript/Network Requests/CORS.md",
     "JavaScript/Network Requests/Blob.md",
     "JavaScript/Network Requests",
@@ -201,11 +214,6 @@
     "ARIA/aria-label.md",
     "JavaScript/Frameworks",
     "JavaScript",
-    "Accessibility/Combobox.md",
-    "CSS",
-    "TypeScript",
-    "Accessibility/Dialogs.md",
-    "Docker.md",
-    "Welcome.md"
+    "Accessibility/Combobox.md"
   ]
 }
