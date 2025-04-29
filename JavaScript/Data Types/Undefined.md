@@ -1,0 +1,4 @@
+- Primitive data type in JavaScript
+- When a variable is declared but not initialized or assigned a value, then it is stored as undefined
+- A function returns `undefined` if a value was _not_ returned
+- Method or statement also return `undefined` if variable that is being evaluated does not have an assigned value

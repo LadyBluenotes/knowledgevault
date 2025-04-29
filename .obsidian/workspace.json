@@ -1,0 +1,212 @@
+{
+  "main": {
+    "id": "48db683837312393",
+    "type": "split",
+    "children": [
+      {
+        "id": "0367b8db70cb8007",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "97cd653b08a0a520",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "bbb4758b1fb44881",
+    "type": "split",
+    "children": [
+      {
+        "id": "0a73a09638e8f609",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2a0f8700492348cb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "e638d77f82ffdbcb",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "31e8389c57a33939",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4ee7edcc9c21401c",
+    "type": "split",
+    "children": [
+      {
+        "id": "926a2979e3c65be4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "28f7ec6b842942b9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "aa89c7219833be3a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "920b37f3737e5dc9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "README.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of README"
+            }
+          },
+          {
+            "id": "1bcf733b895924c9",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "279e594caf5cfd65",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "97cd653b08a0a520",
+  "lastOpenFiles": [
+    "JavaScript/Data Types/`typeof` Operator.md",
+    "JavaScript/Data Types/Symbol.md",
+    "JavaScript/Data Types/Null.md",
+    "JavaScript/Data Types/Undefined.md",
+    "JavaScript/Data Types/Strings.md",
+    "JavaScript/Data Types/Overview - Data Types.md",
+    "JavaScript/Data Types/Number.md",
+    "JavaScript/Data Types/BigInt.md",
+    "JavaScript/Data Types/Boolean.md",
+    "JavaScript/Built-in Objects/Objects.md",
+    "JavaScript/Built-in Objects/Promises.md",
+    "JavaScript/Built-in Objects",
+    "JavaScript/Untitled.md",
+    "JavaScript/Scopes.md",
+    "JavaScript/Temporal dead zone (TDZ).md",
+    "JavaScript/Hoisting.md",
+    "JavaScript/Operators.md",
+    "JavaScript/Variables.md",
+    "Definitions/All.md",
+    "JavaScript/What is JavaScript.md",
+    "Computer Science/Big O Notation.md",
+    "Computer Science",
+    "Untitled.md",
+    "Definitions/Glossary_prev.md",
+    "Definitions",
+    "knowledgevault/JavaScript/Network Requests/XMLHttpRequest.md",
+    "knowledgevault/JavaScript/Network Requests/FormData.md",
+    "knowledgevault/JavaScript/Network Requests/Fetch.md",
+    "knowledgevault/JavaScript/Network Requests/CORS.md",
+    "knowledgevault/JavaScript/Network Requests",
+    "knowledgevault/JavaScript/Libraries",
+    "knowledgevault/JavaScript/Frameworks",
+    "knowledgevault/JavaScript/Built-in Objects",
+    "knowledgevault/TypeScript",
+    "knowledgevault/JavaScript",
+    "knowledgevault/HTML"
+  ]
+}

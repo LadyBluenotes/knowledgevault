@@ -1,0 +1,5 @@
+- Signifies the deliberate absence of any object value
+- Considered one of JS’s primitive values and a falsy value
+- Deliberate absence emphasizes the intentional use to indicate that a variable does not point ot any object
+	- Conveys the purposeful nature of `null`, showing that the variable is _meant_ to be empty or non-existent at execution time
+- Is a way to **reset a variable**, signaling that it should not reference any object
