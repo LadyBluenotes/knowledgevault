@@ -84,3 +84,69 @@ The period between entering a scope and the actual declaration of a variable usi
 Syntax with a programming language that is designed to make things easier to read or express. This can include things being expressed more clearly, more concisely, or in an alternative style that some may prefer.
 
 Usually shorthand for a common operation that could be expressed in an alternative, more verbose form.
+
+---
+# global object
+
+In JavaScript, is an object which represents global scope.
+
+---
+# Global functions
+
+*global function*
+
+Functions which are called globally, rather than on an object.
+
+---
+# radix
+
+Base in mathematical numeral systems
+
+---
+# URI
+
+Unicode Resource Identifier
+
+ A unique sequence of characters that identifies an abstract or physical resource, such as resources on a webpage, mail address, phone number, books, real-world objects such as people and places, concepts
+
+---
+# UTF-8
+
+A character encoding standard used for electronic communicate. 
+
+Is a variable-length character encoding (1 to 4 bytes long).
+
+Is backwards compatible with ASCII and the preferred encoding for e-mail and web pages.
+
+---
+# lone surrogate
+
+A 16-bit code unit satisfying one of the descriptions below:
+
+- In the range of `0xD800`–`0xDBFF`, inclusive (ie. is a leading surrogate), but it is the last code unit in the string, or the next code unit is not a trailing surrogate.
+- It is in the range of `0xDC00`–`0xDFFF`, inclusive (ie. a trailing surrogate), but it is the first code unit in the string, or the previous code unit is not a leading surrogate
+
+Do not represent any Unicode character.
+
+---
+# enumerable
+
+Properties whose internal enumerable flag is set to `true`, which is the default for properties created via simple assignment or via a property initializer. 
+
+Properties defined via `Object.defineProperty` and such are not enumerable by default.
+
+Most iteration means only visit enumerable keys (eg. `for..in` and `Object.keys`)
+
+---
+# deep cloning
+
+*deep clone*
+
+A copy of an object whose properties do not share the same references (point to the same underlying values) as those of the source object from which the copy was made. As a result, when you change either the source or the copy, you can be assured you're not causing the other object to change too.
+
+---
+# JSON
+
+*JavaScript Object Notation*
+
+An open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of name–value pairs and arrays. It is a commonly used data format with diverse uses in electronic data interchange, including that of web applications with servers.

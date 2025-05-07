@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "0367b8db70cb8007",
+        "id": "cef68c0beb0073f3",
         "type": "tabs",
         "children": [
           {
-            "id": "97cd653b08a0a520",
+            "id": "fe3a96e69458452d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "JavaScript/Objects/Built-in Objects/Object.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Object"
             }
           }
         ]
@@ -170,43 +174,43 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "97cd653b08a0a520",
+  "active": "2a0f8700492348cb",
   "lastOpenFiles": [
-    "JavaScript/Data Types/`typeof` Operator.md",
-    "JavaScript/Data Types/Symbol.md",
-    "JavaScript/Data Types/Null.md",
-    "JavaScript/Data Types/Undefined.md",
-    "JavaScript/Data Types/Strings.md",
-    "JavaScript/Data Types/Overview - Data Types.md",
-    "JavaScript/Data Types/Number.md",
-    "JavaScript/Data Types/BigInt.md",
-    "JavaScript/Data Types/Boolean.md",
-    "JavaScript/Built-in Objects/Objects.md",
-    "JavaScript/Built-in Objects/Promises.md",
-    "JavaScript/Built-in Objects",
+    "JavaScript/Objects/Built-in Objects/Object.md",
     "JavaScript/Untitled.md",
-    "JavaScript/Scopes.md",
-    "JavaScript/Temporal dead zone (TDZ).md",
-    "JavaScript/Hoisting.md",
-    "JavaScript/Operators.md",
-    "JavaScript/Variables.md",
-    "Definitions/All.md",
-    "JavaScript/What is JavaScript.md",
-    "Computer Science/Big O Notation.md",
+    "JavaScript/Objects/Built-in Objects/General - Built-In Objects.md",
+    "JavaScript/Objects/Built-in Objects/String.md",
+    "JavaScript/Objects/Built-in Objects/Set.md",
+    "JavaScript/Objects/Built-in Objects/RegExp.md",
+    "JavaScript/Regular Expressions.md",
+    "JavaScript/Objects/Built-in Objects/Promise.md",
+    "JavaScript/Objects/Promises.md",
+    "JavaScript/Objects/Built-in Objects/Number.md",
+    "JavaScript/Objects/Built-in Objects/Math.md",
+    "JavaScript/Objects/Built-in Objects/Map.md",
+    "JavaScript/Objects/Built-in Objects/JSON.md",
+    "JavaScript/Objects/Built-in Objects/Global.md",
+    "JavaScript/Objects/Built-in Objects/Function.md",
+    "JavaScript/Objects/Built-in Objects/Functions.md",
+    "JavaScript/Objects/Built-in Objects/Error.md",
+    "JavaScript/Objects/Built-in Objects/Date.md",
+    "JavaScript/Objects/Built-in Objects/Boolean.md",
+    "JavaScript/Objects/Built-in Objects/Array.md",
+    "JavaScript/Objects/Built-in Objects/Function Properties/decodeURI().md",
+    "JavaScript/Objects/Built-in Objects/Untitled",
+    "JavaScript/Objects/Object Methods.md",
+    "JavaScript/Objects/General - Objects.md",
+    "JavaScript/Objects/Object Looping.md",
+    "JavaScript/Objects/Built-in Objects/Fundamental Objects",
+    "JavaScript/Objects/Built-in Objects/Fundamental Objects.md",
+    "JavaScript/Objects/Built-in Objects/Function Properties/encodeURIComponent().md",
+    "JavaScript/Objects/Built-in Objects/Function Properties",
+    "JavaScript/Objects/Built-in Objects",
+    "JavaScript/Objects",
     "Computer Science",
-    "Untitled.md",
-    "Definitions/Glossary_prev.md",
     "Definitions",
-    "knowledgevault/JavaScript/Network Requests/XMLHttpRequest.md",
-    "knowledgevault/JavaScript/Network Requests/FormData.md",
-    "knowledgevault/JavaScript/Network Requests/Fetch.md",
-    "knowledgevault/JavaScript/Network Requests/CORS.md",
     "knowledgevault/JavaScript/Network Requests",
     "knowledgevault/JavaScript/Libraries",
-    "knowledgevault/JavaScript/Frameworks",
-    "knowledgevault/JavaScript/Built-in Objects",
-    "knowledgevault/TypeScript",
-    "knowledgevault/JavaScript",
-    "knowledgevault/HTML"
+    "knowledgevault/JavaScript/Frameworks"
   ]
 }

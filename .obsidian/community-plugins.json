@@ -9,5 +9,6 @@
   "obsidian-smart-typography",
   "css-editor",
   "cm-editor-syntax-highlight-obsidian",
-  "shiki-highlighter"
+  "shiki-highlighter",
+  "obsidian-text-format"
 ]

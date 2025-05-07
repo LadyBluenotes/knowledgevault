@@ -1,5 +1,7 @@
 {
   "tabSize": 6,
   "showIndentGuide": true,
-  "smartIndentList": true
+  "smartIndentList": true,
+  "livePreview": true,
+  "promptDelete": false
 }
