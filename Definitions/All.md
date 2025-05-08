@@ -150,3 +150,46 @@ A copy of an object whose properties do not share the same references (point to 
 *JavaScript Object Notation*
 
 An open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of name–value pairs and arrays. It is a commonly used data format with diverse uses in electronic data interchange, including that of web applications with servers.
+
+---
+# module graph
+
+A directed graph where each node represents a JavaScript module (file), and each edge represents an import or dependency between modules.
+
+Components:
+- **Nodes**: individual JS modules or files
+- **Edges**: import/export relationships (`import`/`require` statements)
+- **Root Node**: Usually the application's entry point (eg. `index.html`, `index.js`
+- **Leaf Nodes**: Modules that do _not_ import any others
+
+---
+# factory function
+
+A function that returns an object. 
+
+A way of creating and returning objects in a more controlled and customized manner. Form a design patter that enables the creation of objects with specific properties and behaviours.
+
+---
+# side-effects
+
+Occurs when a function or expression modifies some state outside its local scope or interacts with the external world in addition to returning a value.
+
+Happen with impure functions when they may depend on external state, produce different outputs for the same input, modifies external state (I/O, globals, etc.), and can be harder to reason about due to hidden dependencies.
+
+---
+# array destructuring
+
+Syntax that allows you to unpack values from an array into distinct variables.
+
+```js
+
+const [a,b] = [1,2] // a = 1, b = 2
+
+```
+
+---
+# callback functions
+
+*callback function*
+
+Function passed as an argument to another function, executed later.
