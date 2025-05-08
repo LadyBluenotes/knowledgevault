@@ -117,7 +117,7 @@ export default App;
 
 - React hooks made it possible to use state (and side-effects)
 - Allows for a level of interaction with the application
-- uses the [`useState`]([[React Hooks#useState]]) hook
+- uses the [`useState`]([[Hooks#useState]]) hook
 
 ```jsx {8-10, 15-19}
 import React, { useState } from "react";
@@ -345,16 +345,14 @@ export default App;
 - functions can be setup on top of initial states in the `useState` hook
 
 ```jsx {6-7, 9-10}
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const App = () => {
   const [count, setCount] = useState(0);
-  
-  const handleIncrement = () =>
-    setCount(currentCount => currentCount + 1);
 
-  const handleDecrement = () =>
-    setCount(currentCount => currentCount - 1);
+  const handleIncrement = () => setCount((currentCount) => currentCount + 1);
+
+  const handleDecrement = () => setCount((currentCount) => currentCount - 1);
 
   return (
     <div>
@@ -366,9 +364,7 @@ const App = () => {
         Decrement
       </button>
     </div>
-
   );
-
 };
 
 export default App;
@@ -376,22 +372,20 @@ export default App;
 
 ### Mount
 
-- There is a mounting lifecycle for React components when they are rendered *the first time*
-- To execute something when a function component **did mount**, the [[React Hooks#useEffect]] hook can be used
+- There is a mounting lifecycle for React components when they are rendered _the first time_
+- To execute something when a function component **did mount**, the [[Hooks#useEffect]] hook can be used
 
 ```jsx {12}
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const App = () => {
   const [count, setCount] = useState(0);
 
-  const handleIncrement = () =>
-    setCount(currentCount => currentCount + 1);
+  const handleIncrement = () => setCount((currentCount) => currentCount + 1);
 
-  const handleDecrement = () =>
-    setCount(currentCount => currentCount - 1);
+  const handleDecrement = () => setCount((currentCount) => currentCount - 1);
 
-  useEffect(() => setCount(currentCount => currentCount + 1), []);
+  useEffect(() => setCount((currentCount) => currentCount + 1), []);
 
   return (
     <div>
@@ -410,29 +404,27 @@ export default App;
 ```
 
 - This example will have count `0` then `1` shortly displayed after one another
-	- First render of the component shows the count `0` from the initial state
-	- After component is mounted, useEffect will run to set a new state of 1
+  - First render of the component shows the count `0` from the initial state
+  - After component is mounted, useEffect will run to set a new state of 1
 
 ### Update
 
-- Every time incoming props or state of the component change, the component triggers a *rerender* to display the latest status quo which is often derived form the props and state
-	- A render executes *everything* within the Function Component’s body
+- Every time incoming props or state of the component change, the component triggers a _rerender_ to display the latest status quo which is often derived form the props and state
+  - A render executes _everything_ within the Function Component’s body
 - To act upon a rerender, you can use the useEffect hook again to do something after the component updates
 
 ```jsx {4,5, 13}
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const App = () => {
-  const initialCount = +localStorage.getItem('storageCount') || 0;
+  const initialCount = +localStorage.getItem("storageCount") || 0;
   const [count, setCount] = useState(initialCount);
 
-  const handleIncrement = () =>
-    setCount(currentCount => currentCount + 1);
-    
-  const handleDecrement = () =>
-    setCount(currentCount => currentCount - 1);
+  const handleIncrement = () => setCount((currentCount) => currentCount + 1);
 
-  useEffect(() => localStorage.setItem('storageCount', count));
+  const handleDecrement = () => setCount((currentCount) => currentCount - 1);
+
+  useEffect(() => localStorage.setItem("storageCount", count));
 
   return (
     <div>
@@ -450,26 +442,23 @@ const App = () => {
 export default App;
 ```
 
-
 ## Pure React function component
 
 - [React class components]([[Overview of the Types of React Components#React Class Components (not recommended)]]) offered the possibility to decide whether a component has to rerender or not
-	- Was achieved by using the PureComponent or `shouldComponentUpdate` to avoid performance bottlenecks in React by preventing rerenders
+  - Was achieved by using the PureComponent or `shouldComponentUpdate` to avoid performance bottlenecks in React by preventing rerenders
 
 ```jsx {4, 17, 29-33}
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const App = () => {
-  const [greeting, setGreeting] = useState('Hello React!');
+  const [greeting, setGreeting] = useState("Hello React!");
   const [count, setCount] = useState(0);
-  
-  const handleIncrement = () =>
-    setCount(currentCount => currentCount + 1);
 
-  const handleDecrement = () =>
-    setCount(currentCount => currentCount - 1);
+  const handleIncrement = () => setCount((currentCount) => currentCount + 1);
 
-  const handleChange = event => setGreeting(event.target.value);
+  const handleDecrement = () => setCount((currentCount) => currentCount - 1);
+
+  const handleChange = (event) => setGreeting(event.target.value);
 
   return (
     <div>
@@ -486,7 +475,7 @@ const App = () => {
 };
 
 const Count = ({ count }) => {
-  console.log('Does it (re)render?');
+  console.log("Does it (re)render?");
 
   return <h1>{count}</h1>;
 };
@@ -495,22 +484,20 @@ export default App;
 ```
 
 - In this case, everytime something is typed into the input field, the `App` component updates its state, rerenders, and rerenders the Count component as well
-- [useMemo]([[React Hooks#useMemo]]) can be used to prevent a rerender when the incoming props of a component *haven’t changed*
+- [useMemo]([[Hooks#useMemo]]) can be used to prevent a rerender when the incoming props of a component _haven’t changed_
 
 ```jsx {1} add={29-33}
-import React, { useState, memo } from 'react';
+import React, { useState, memo } from "react";
 
 const App = () => {
-  const [greeting, setGreeting] = useState('Hello React!');
+  const [greeting, setGreeting] = useState("Hello React!");
   const [count, setCount] = useState(0);
 
-  const handleIncrement = () =>
-    setCount(currentCount => currentCount + 1);
+  const handleIncrement = () => setCount((currentCount) => currentCount + 1);
 
-  const handleDecrement = () =>
-    setCount(currentCount => currentCount - 1);
+  const handleDecrement = () => setCount((currentCount) => currentCount - 1);
 
-  const handleChange = event => setGreeting(event.target.value);
+  const handleChange = (event) => setGreeting(event.target.value);
 
   return (
     <div>
@@ -527,7 +514,7 @@ const App = () => {
 };
 
 const Count = memo(({ count }) => {
-  console.log('Does it (re)render?');
+  console.log("Does it (re)render?");
 
   return <h1>{count}</h1>;
 });
@@ -537,24 +524,144 @@ export default App;
 
 - this means that a component wont update when a user types and only App will rerender
 
-
 ## Import and Export
 
 - Import and export statements can be used when components are separated into their own files
 
 ```jsx title="src/components/Headline.js"
-import React from 'react';
+import React from "react";
 
 const Headline = (props) => {
   return <h1>{props.value}</h1>;
 };
 
 export default Headline;
+```
 
-// title="src/components/App.js"
+```jsx title="src/components/App.js"
+import React from "react";
+import Headline from "./Headline.js";
 
+const App = () => {
+  const greeting = "Hello Function Component!";
+
+  return <Headline value={greeting} />;
+};
+
+export default App;
+```
+
+## Ref
+
+- Should only be used in rare cases such as accessing / manipulating the DOM manually (eg. focus element), animations, and integrating third-party DOM libraries (eg. D3)
+
+```jsx {1} add={16, 18, 25}
+import React, { useState, useEffect, useRef } from "react";
+
+const App = () => {
+  const [greeting, setGreeting] = useState("Hello React!");
+  const handleChange = (event) => setGreeting(event.target.value);
+
+  return (
+    <div>
+      <h1>{greeting}</h1>
+      <Input value={greeting} handleChange={handleChange} />
+    </div>
+  );
+};
+
+const Input = ({ value, handleChange }) => {
+  const ref = useRef();
+
+  useEffect(() => ref.current.focus(), []);
+
+  return <input type="text" value={value} onChange={handleChange} ref={ref} />;
+};
+
+export default App;
+```
+
+- Function components cannot be **given** refs. This will be assigned to the *component instance* and not the actual DOM node
+
+```jsx {17, 23}
+// wil not work 
+
+import React, { useState, useEffect, useRef } from "react";
+
+const App = () => {
+  const [greeting, setGreeting] = useState("Hello React!");
+
+  const handleChange = (event) => setGreeting(event.target.value);
+
+  const ref = useRef();
+
+  useEffect(() => ref.current.focus(), []);
+
+  return (
+    <div>
+      <h1>{greeting}</h1>
+      <Input value={greeting} handleChange={handleChange} ref={ref} />
+    </div>
+  );
+};
+
+const Input = ({ value, handleChange, ref }) => (
+  <input type="text" value={value} onChange={handleChange} ref={ref} />
+);
+
+export default App;
+```
+
+- If a function component needs to be passed a ref (note: it is not recommended) you can use `forwardRef` to forward the ref
+
+```jsx add={7, 27}
+// Does work!
+
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  forwardRef,
+} from 'react';
+
+const App = () => {
+  const [greeting, setGreeting] = useState('Hello React!');
+
+  const handleChange = event => setGreeting(event.target.value);
+
+  const ref = useRef();
+
+  useEffect(() => ref.current.focus(), []);
+
+  return (
+    <div>
+      <h1>{greeting}</h1>
+      <Input value={greeting} handleChange={handleChange} ref={ref} />
+    </div>
+  );
+};
+
+const Input = forwardRef(({ value, handleChange }, ref) => (
+  <input
+    type="text"
+    value={value}
+    onChange={handleChange}
+    ref={ref}
+  />
+));
+
+export default App;
+```
+
+## Proptypes
+
+> [React prop-types](https://github.com/facebook/prop-types) must be installed as it was removed from the React core library. It is recommended to use TypeScript over prop-types.
+
+- Once a component is defined, it can be assigned PropTypes to validate the incoming props of a component
+
+```jsx add={2, 14-16}
 import React from 'react';
-import Headline from './Headline.js';
+import PropTypes from 'prop-types';
 
 const App = () => {
   const greeting = 'Hello Function Component!';
@@ -562,5 +669,20 @@ const App = () => {
   return <Headline value={greeting} />;
 };
 
+const Headline = ({ value }) => {
+  return <h1>{value}</h1>;
+};
+
+Headline.propTypes = {
+  value: PropTypes.string.isRequired,
+};
+
 export default App;
 ```
+
+## TypeScript
+
+- It is more recommended to use TypeScript as a type system
+- Benefits the developer by creating a more robust codebase
+- Only defines incoming props as types
+	- Most type inference comes out-of-the-box

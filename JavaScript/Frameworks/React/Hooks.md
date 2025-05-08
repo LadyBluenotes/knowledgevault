@@ -1,6 +1,7 @@
 ## useState
 
 - declares a state variable
+- Does *not* need to be typed because types are inferred
 
 ```jsx
 const [something, setSomething] = useState("Hello World");

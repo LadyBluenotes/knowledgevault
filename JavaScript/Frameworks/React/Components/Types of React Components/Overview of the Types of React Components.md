@@ -335,7 +335,7 @@ export default withLocalStorage("text")(ClassComponent);
   - Not the case anymore due to React Hooks which re-branded them to Function Components
 
 - React Hooks brought state and side-effects to Function Components which make them these days the _industry standard_ for modern React Applications
-- React comes with a variety of [React hooks]([[React Hooks]]), but also the ability to create custom hooks
+- React comes with a variety of [React hooks]([[Hooks]]), but also the ability to create custom hooks
 
 ```jsx
 import { useState } from "react";
@@ -358,8 +358,8 @@ const FunctionComponent = () => {
 export default FunctionComponent;
 ```
 
-- [`useState`]([[React Hooks#useState]]) is used for managing state
-- [`useEffect`]([[React Hooks#useEffect]]) is executed every time the value of the state changes
+- [`useState`]([[Hooks#useState]]) is used for managing state
+- [`useEffect`]([[Hooks#useEffect]]) is executed every time the value of the state changes
 
 ```jsx add={6-8} {4}
 import { useEffect, useState } from "react";
