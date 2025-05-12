@@ -2,6 +2,12 @@
   "monospaceFontFamily": "FiraCode Nerd Font Mono",
   "textFontFamily": "Inter",
   "interfaceFontFamily": "Inter",
-  "enabledCssSnippets": [],
+  "enabledCssSnippets": [
+    "extended-colorschemes",
+    "MCL Gallery Cards",
+    "MCL Multi Column",
+    "MCL Wide Views",
+    "indexFix"
+  ],
   "baseFontSize": 16
 }

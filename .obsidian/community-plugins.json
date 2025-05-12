@@ -11,5 +11,6 @@
   "cm-editor-syntax-highlight-obsidian",
   "shiki-highlighter",
   "obsidian-text-format",
-  "obsidian42-brat"
+  "obsidian42-brat",
+  "find-unlinked-files"
 ]

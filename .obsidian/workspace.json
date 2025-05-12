@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JavaScript/Tools/NodeJS/NodeJS Modules.md",
+                "file": "JavaScript/Tools/NodeJS/NodeJS Modules/General - NodeJS Modules.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "NodeJS Modules"
+              "title": "General - NodeJS Modules"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "JavaScript/Tools/NodeJS/NodeJS Modules.md",
+                "file": "JavaScript/Tools/NodeJS/NodeJS Modules/General - NodeJS Modules.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for NodeJS Modules"
+              "title": "Backlinks for General - NodeJS Modules"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "JavaScript/Tools/NodeJS/NodeJS Modules.md",
+                "file": "JavaScript/Tools/NodeJS/NodeJS Modules/General - NodeJS Modules.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from NodeJS Modules"
+              "title": "Outgoing links from General - NodeJS Modules"
             }
           },
           {
@@ -160,7 +160,8 @@
               "title": "Source Control"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -179,6 +180,10 @@
   },
   "active": "b5b4c38a2ddb2dc1",
   "lastOpenFiles": [
+    "JavaScript/Tools/NodeJS/NodeJS Modules/CommonJS.md",
+    "JavaScript/Tools/NodeJS/NodeJS Modules/General - NodeJS Modules.md",
+    "JavaScript/Tools/NodeJS/NodeJS Modules/ESM.md",
+    "JavaScript/Tools/NodeJS/NodeJS Modules",
     "JavaScript/Tools/ESBuild.md",
     "JavaScript/Tools/NodeJS/What is NodeJS.md",
     "JavaScript/Frameworks/React/Components/Types of React Components/General - Types of React Components.md",
@@ -191,10 +196,8 @@
     "React Class Components (not recommended).md",
     "JavaScript/Data Types/BigInt.md",
     "JavaScript/Data Types/`typeof` Operator.md",
-    "JavaScript/Tools/NodeJS/NodeJS Modules.md",
     "[[.md",
     "[[NodeJS.md",
-    "JavaScript/Tools/NodeJS/Untitled",
     "JavaScript/Tools/NodeJS",
     "Definitions/All.md",
     "JavaScript/Frameworks/React/Components/Types of React Components",
@@ -210,8 +213,6 @@
     "JavaScript/Objects/Built-in Objects/Object.md",
     "JavaScript/Untitled.md",
     "JavaScript/Objects/Built-in Objects/General - Built-In Objects.md",
-    "JavaScript/Objects/Built-in Objects/String.md",
-    "JavaScript/Objects/Built-in Objects/Set.md",
     "JavaScript/Objects/Built-in Objects/Untitled",
     "JavaScript/Objects/Built-in Objects/Fundamental Objects",
     "JavaScript/Objects/Built-in Objects/Function Properties"
