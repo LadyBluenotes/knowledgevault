@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JavaScript/Frameworks/React/Rendering.md",
+                "file": "JavaScript/Frameworks/React/Hooks.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Rendering"
+              "title": "Hooks"
             }
           }
         ]
@@ -178,8 +178,8 @@
   },
   "active": "ec44cddac0f40216",
   "lastOpenFiles": [
-    "JavaScript/Frameworks/React/Components/Basics.md",
     "JavaScript/Frameworks/React/Rendering.md",
+    "JavaScript/Frameworks/React/Components/Basics.md",
     "JavaScript/Frameworks/React/Hooks.md",
     "JavaScript/Frameworks/React/Components/Types of React Components/React Function Components.md",
     "JavaScript/Frameworks/React/Components/Types of React Components/Overview of the Types of React Components.md",
