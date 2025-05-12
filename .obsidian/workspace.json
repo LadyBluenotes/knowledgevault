@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "45865564212c6da4",
+        "id": "d5ff29156c621bb6",
         "type": "tabs",
         "children": [
           {
-            "id": "ec44cddac0f40216",
+            "id": "b5b4c38a2ddb2dc1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JavaScript/Frameworks/React/Hooks.md",
+                "file": "JavaScript/Tools/NodeJS/NodeJS Modules.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Hooks"
+              "title": "NodeJS Modules"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "JavaScript/Frameworks/React/Rendering.md",
+                "file": "JavaScript/Tools/NodeJS/NodeJS Modules.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Rendering"
+              "title": "Backlinks for NodeJS Modules"
             }
           },
           {
@@ -113,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "JavaScript/Tools/NodeJS/NodeJS Modules.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from NodeJS Modules"
             }
           },
           {
@@ -176,13 +177,25 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "ec44cddac0f40216",
+  "active": "b5b4c38a2ddb2dc1",
   "lastOpenFiles": [
-    "JavaScript/Frameworks/React/Rendering.md",
-    "JavaScript/Frameworks/React/Components/Basics.md",
-    "JavaScript/Frameworks/React/Hooks.md",
+    "JavaScript/Tools/ESBuild.md",
+    "JavaScript/Tools/NodeJS/What is NodeJS.md",
+    "JavaScript/Frameworks/React/Components/Types of React Components/General - Types of React Components.md",
     "JavaScript/Frameworks/React/Components/Types of React Components/React Function Components.md",
-    "JavaScript/Frameworks/React/Components/Types of React Components/Overview of the Types of React Components.md",
+    "JavaScript/Frameworks/React/Components/Basics.md",
+    "JavaScript/Frameworks/React/Rendering.md",
+    "JavaScript/Frameworks/React/Hooks.md",
+    "React Components.md",
+    "[[Overview.md",
+    "React Class Components (not recommended).md",
+    "JavaScript/Data Types/BigInt.md",
+    "JavaScript/Data Types/`typeof` Operator.md",
+    "JavaScript/Tools/NodeJS/NodeJS Modules.md",
+    "[[.md",
+    "[[NodeJS.md",
+    "JavaScript/Tools/NodeJS/Untitled",
+    "JavaScript/Tools/NodeJS",
     "Definitions/All.md",
     "JavaScript/Frameworks/React/Components/Types of React Components",
     "Computer Science/Object Orientated Programming.md",
@@ -190,7 +203,6 @@
     "JavaScript/Frameworks/React/Components",
     "JavaScript/Tools/Vite.md",
     "JavaScript/Tools/Rollup.md",
-    "JavaScript/Tools/ESBuild.md",
     "JavaScript/Frameworks/NextJS.md",
     "JavaScript/Tools",
     "JavaScript/Frameworks/React",
@@ -200,19 +212,8 @@
     "JavaScript/Objects/Built-in Objects/General - Built-In Objects.md",
     "JavaScript/Objects/Built-in Objects/String.md",
     "JavaScript/Objects/Built-in Objects/Set.md",
-    "JavaScript/Objects/Built-in Objects/RegExp.md",
-    "JavaScript/Regular Expressions.md",
-    "JavaScript/Objects/Built-in Objects/Promise.md",
-    "JavaScript/Objects/Promises.md",
-    "JavaScript/Objects/Built-in Objects/Number.md",
-    "JavaScript/Objects/Built-in Objects/Math.md",
-    "JavaScript/Objects/Built-in Objects/Map.md",
-    "JavaScript/Objects/Built-in Objects/JSON.md",
-    "JavaScript/Objects/Built-in Objects/Global.md",
     "JavaScript/Objects/Built-in Objects/Untitled",
     "JavaScript/Objects/Built-in Objects/Fundamental Objects",
-    "JavaScript/Objects/Built-in Objects/Function Properties",
-    "JavaScript/Objects/Built-in Objects",
-    "JavaScript/Objects"
+    "JavaScript/Objects/Built-in Objects/Function Properties"
   ]
 }

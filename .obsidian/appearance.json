@@ -1,1 +1,7 @@
-{}
+{
+  "monospaceFontFamily": "FiraCode Nerd Font Mono",
+  "textFontFamily": "Inter",
+  "interfaceFontFamily": "Inter",
+  "enabledCssSnippets": [],
+  "baseFontSize": 16
+}

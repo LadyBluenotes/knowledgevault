@@ -131,7 +131,9 @@ export default CreateClassWithMixinComponent;
 - `LocalStorageMixin` encapsulates logic for managing the `text` state within local storage, initializing the `text` in `getInitialState` and updating it in `componentDidUpdate`
   - By adding Mixin to the `mixins` array, component can reuse shared functionality _without_ duplicating code
 
-## React Class Components (not recommended)
+## React Class Components
+
+> ***Not Recommended***
 
 > Introduced as a way to use JavaScript classes (due to ES6 release in 2015), when JS classes were made available to the language.
 
@@ -139,7 +141,6 @@ export default CreateClassWithMixinComponent;
 
 - Introduced in version 0.13, released in March 2015
   - Prior to, `createClass` was used to define components
--
 
 ```jsx
 import React from "react";
@@ -223,7 +224,7 @@ export default ClassComponent;
 
 - Offer several lifecycle methods for the mounting, updating and unmounting of the component
 
-```jsx {8} add={15-17}
+```jsx {8} add={14-16}
 import React from "react";
 
 class ClassComponent extends React.Component {
@@ -262,9 +263,11 @@ class ClassComponent extends React.Component {
 export default ClassComponent;
 ```
 
-## React Higher-Order Components (pattern)
+## React Higher-Order Components
 
 > Not recommended anymore
+> 
+> Is a pattern
 
 - React Higher-Order Components (HOCs) have been a popular advanced React pattern for reusable logic across React components
 - HOCs are a component which takes a component as an input and returns he component as an output with extended functionalities
@@ -321,7 +324,7 @@ export default withLocalStorage("text")(ClassComponent);
 ```
 
 - Another popular advanced React pattern are **React Render Prop Components**, which are often used as alternatives to React HOCs
-  - Can both be used for [Class Components]([[Overview of the Types of React Components#React Class Components (not recommended)]]) and [Function Components]([[Overview of the Types of React Components#React Function Components]])
+  - Can both be used for [Class Components](#React%20Class%20Components) and [Function Components](#React%20Function%20Components)
   - Both are not much used in **modern** React applications - React function components with React Hooks are more normal for sharing logic across components
 
 ## React Function Components
@@ -335,7 +338,7 @@ export default withLocalStorage("text")(ClassComponent);
   - Not the case anymore due to React Hooks which re-branded them to Function Components
 
 - React Hooks brought state and side-effects to Function Components which make them these days the _industry standard_ for modern React Applications
-- React comes with a variety of [React hooks]([[Hooks]]), but also the ability to create custom hooks
+- React comes with a variety of [React hooks](Hooks.md), but also the ability to create custom hooks
 
 ```jsx
 import { useState } from "react";

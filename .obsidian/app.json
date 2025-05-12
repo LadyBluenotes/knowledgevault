@@ -1,8 +1,10 @@
 {
-  "tabSize": 6,
+  "tabSize": 4,
   "showIndentGuide": true,
   "smartIndentList": true,
   "livePreview": true,
   "promptDelete": false,
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "useMarkdownLinks": true,
+  "useTab": true
 }

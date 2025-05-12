@@ -193,3 +193,27 @@ const [a,b] = [1,2] // a = 1, b = 2
 *callback function*
 
 Function passed as an argument to another function, executed later.
+
+---
+#  I/O
+
+Input/Output
+
+The communication between a computer program and the external world, typically involving the transfer of data into (input) and out of (output) a system.
+
+Input refers to data received by the program (e.g., from a user, file, or device), while output refers to data sent from the program (e.g., to a display, file, or another system). I/O is fundamental to program interaction and system functionality.
+
+---
+# symlinks
+
+Type of file in a filesystem that points to another file or directory. Acts as a shortcut or reference to another location in the filesystem, rather than holding the actual data itself.
+
+Used for creating shortcuts, organizing files, and simplifying complex directory structures
+
+Can be used to make packages, files, or directories accessible from different locations in the filesystem without duplicating the data.
+
+Allow for flexible dependency management in software systems, as in the case of Node.js resolving module dependencies.
+
+Two main types:
+1. **Soft (symbolic link):** Points to a file or directory by name and path. If target file or directory is moved or deleted, symlink becomes broken (ie. no longer points to a valid location
+2. **Hard:** Points directly to data blocks on the disk. More like an alias for original file and remains valid even if original file is renamed or moved (though not across different filesystems)

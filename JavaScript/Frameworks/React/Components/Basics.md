@@ -21,7 +21,7 @@ const App = () => {
 };
 ```
 
-- The above code is a [function component]([[Overview of the Types of React Components#React Function Components]]) but it can be [any other kind of React component]([[Overview of the Types of React Components]])
+- The above code is a [function component](General%20-%20Types%20of%20React%20Components.md#React%20Fuction%20Components) but it can be [any other kind of React component](General%20-%20Types%20of%20React%20Components.md)
 - Function components are declared as JS functions and return React's JSX
 - when used, becomes an instance of the component and lives in the React's component tree
 - **React element** is when you are rendering a component within another component with the use of angle brackets

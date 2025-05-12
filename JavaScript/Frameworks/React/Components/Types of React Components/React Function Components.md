@@ -117,7 +117,7 @@ export default App;
 
 - React hooks made it possible to use state (and side-effects)
 - Allows for a level of interaction with the application
-- uses the [`useState`]([[Hooks#useState]]) hook
+- uses the [`useState`](Hooks.md#useState) hook
 
 ```jsx {8-10, 15-19}
 import React, { useState } from "react";
@@ -178,7 +178,7 @@ const Headline = () => {
 export default App;
 ```
 
-- This way of defining functions within a component is similar to how they are defined within [React Class Components]([[Overview of the Types of React Components#React Class Components (not recommended)]])
+- This way of defining functions within a component is similar to how they are defined within React Cl
 
 ## Callback function
 
@@ -341,7 +341,7 @@ export default App;
 
 ## Component Lifecycles
 
-- contains no constructor similar to what is used in [React Class Components]([[Overview of the Types of React Components#React Class Components (not recommended)]]) to allocate initial state
+- contains no constructor similar to what is used in [React Class Components](General%20-%20Types%20of%20React%20Components.md#React%20Class%20Components) to allocate initial state
 - functions can be setup on top of initial states in the `useState` hook
 
 ```jsx {6-7, 9-10}
@@ -373,7 +373,7 @@ export default App;
 ### Mount
 
 - There is a mounting lifecycle for React components when they are rendered _the first time_
-- To execute something when a function component **did mount**, the [[Hooks#useEffect]] hook can be used
+- To execute something when a function component **did mount**, the [useEffect](Hooks.md#useEffect) hook can be used
 
 ```jsx {12}
 import React, { useState, useEffect } from "react";
@@ -444,7 +444,7 @@ export default App;
 
 ## Pure React function component
 
-- [React class components]([[Overview of the Types of React Components#React Class Components (not recommended)]]) offered the possibility to decide whether a component has to rerender or not
+- [React class components](General%20-%20Types%20of%20React%20Components.md#React%20Class%20Components) offered the possibility to decide whether a component has to rerender or not
   - Was achieved by using the PureComponent or `shouldComponentUpdate` to avoid performance bottlenecks in React by preventing rerenders
 
 ```jsx {4, 17, 29-33}
