@@ -26,3 +26,10 @@
 | **Tooling Support**        | Widely supported, legacy-compatible                                           | Modern tooling supports it well; better static analysis and tree-shaking     |
 | **When to Use**            | Best for existing or legacy projects                                          | Recommended for new projects                                                |
 | **Migration Strategy**     | Continue using as-is; optionally migrate using Babel/TypeScript                | Use directly or transition from CommonJS gradually                          |
+
+## `global` keyword
+
+- Top-level scope 
+- Global object is called the `window` object
+- Within the **browser**, `var something` will define a new global variable *inside* the `window` object
+- In Node, this is different - the top-level scope is **not** the global scope and `var something` inside a node module will be *local to that module*
