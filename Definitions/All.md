@@ -233,3 +233,8 @@ If there is a change that breaks a package dependency, it is strongly recommende
 # stack trace
 
 A stack trace is a list of places where an error has occurred. Tells you the call hierarchy that led to the failure
+
+---
+# race condition
+
+Situation in a concurrent or parallel program where the outcome depends on the unpredictable order in which multiple processes or threads access and manipulate shared data.

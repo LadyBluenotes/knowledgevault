@@ -92,7 +92,7 @@
 - Objects represent collections which use keys
 - Iterable collections (Map and Set) contain elements which are easily iterated in the order of insertion
 
-- [[Map]]
+- [[JavaScript/Objects/Built-in Objects/Map]]
 - [[Set]]
 - [[WeakMap]]
 - [[WeakSet]]
@@ -105,7 +105,7 @@
 - [[SharedArrayBuffer]]
 - [[DataView]]
 - [[Atomics]]
-- [[JSON]]
+- [[JavaScript/Objects/Built-in Objects/JSON]]
 
 ## Managing memory
 

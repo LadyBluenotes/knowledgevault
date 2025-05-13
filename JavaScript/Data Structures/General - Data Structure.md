@@ -1,0 +1,3 @@
+- A format to organize, manage, and store data in a way that allows for efficient access and modification
+- Has primitive (built-in) and non-primitive data structures
+    - Primitive data structures include arrays and objects
