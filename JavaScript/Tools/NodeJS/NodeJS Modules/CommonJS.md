@@ -3,173 +3,228 @@
 
 - Each file is treated as a separate module
 - Functions and objects are added to the root of a module by specifying additional properties on the `export` object
-- Variables local to the module will be private because module is [wrapped by a function by node](#Module%20wrapper)
+- Variables local to the module will be private because module is [wrapped by a function by node](#Module%20wrapper%20function)
 
-## Enabling
+## Module wrapper function
 
-- By default, NodeJS will treat the following as CommonJS modules:
-  - Files with `.cjs` extension
-  - Files with a `.js` extension when the nearest parent `package.json` contains a top-level field `"type"` with a value of `"commonjs"`
-  - Files with a `.js` extension or without an extension, when the nearest parent `package.json` file doesn't contain a top-level field `"type"` or there is no `package.json` in any parent folder (unless the file contains syntax that errors unless it is evaluated as an ES module)
-    - Package authors should include the `"type"` field, even in packages where all sources are CommonJS
-    - Being explicit about the `type` of the package will make things easier for build tools and loaders to determine how the files in the package should be interpreted
-  - Files with an extension that is not `.mjs`, `.cjs`, `.json`, `.node`, or `.js` (when the nearest parent `package.json` file contains a top-level field `"type"` with a value of `"module"`
-    - files will be recognized as CommonJS modules only if they are being included via `require()`, not when used as the command-line entry point of the program
+- Before executing a module, Node wraps all the code inside that module with a function wrapper
 
-## Accessing main module
+```js
+(function (exports, require, module, __filename, __dirname) {
+  // Module code
+});
+```
 
-- When a file is run directly from Node.js, `require.main` is set to its `module`
-  - Means that it is possible to determine whether a file has been run directly by testing `require.main === module`
-- When the entry point is not a CommonJS module, `require.main` is `undefined`, and
-- main module is out of reach
+- In doing this, node achieves the following:
+  - Top level variables (`var`, `let`, `const`) are scoped to the **module** instead of the global object
+  - Make _module-specific_ variables like global variables
+    - Eg. `module` and `exports`
+- Notice that the `exports` object references the `module.exports`
 
-## Package manager tips
+```js
+console.log(module.exports === exports); // true
+```
 
-- `require()` was designed to be general enough to support reasonable directory structures
+## Importing core NodeJS modules
 
-- **Directory Structure:**
-  - `/usr/lib/node/<package>/<version>/` holds the contents of a specific package version.
-    - Example: `/usr/lib/node/foo/1.2.3/` for the `foo` package, version 1.2.3.
-  - Dependencies of packages (e.g., `foo` depends on `bar`) are placed in respective directories.
-    - `/usr/lib/node/foo/1.2.3/node_modules/bar` is a symbolic link to the real location of `bar` (e.g., `/usr/lib/node/bar/4.3.2/`).
-  - Dependencies of `bar` are linked in `/usr/lib/node/bar/4.3.2/node_modules/*`.
-- **Package Dependencies & Cyclic Dependencies:**
-  - Packages can depend on others (e.g., `foo` depends on `bar`).
-    - Dependencies may have their own dependencies, and cyclic dependencies can occur.
-      - Node.js resolves these dependencies through symlinks to the appropriate package versions.
-- **Optimization:**
-  - Instead of placing packages directly in `/usr/lib/node`, use `/usr/lib/node_modules/<name>/<version>` for module storage.
-  - This prevents Node.js from looking in unnecessary locations like `/usr/node_modules` or `/node_modules`.
-- **REPL Integration:**
-  - To make modules available in the Node.js REPL, add `/usr/lib/node_modules` to the `$NODE_PATH` environment variable.
-- **Module Lookup Process:**
-  - Node.js uses the realpath of files and checks relative `node_modules` folders for dependencies.
-  - Packages and their dependencies can be located anywhere, as long as the symlinks are set correctly.
+- Node has built-in modules you can use without writing or installing any module
 
-## Loading ECMAScript modules using require()
+```js
+const http = require("http");
 
-- **.mjs Extension**:
-  - Reserved for **ECMAScript Modules (ESM)**.
-  - Files with `.mjs` are parsed as ESM.
-- **require() with ECMAScript Modules**:
-  - **Synchronous loading** (no top-level `await`).
-  - Conditions to load an ESM with `require()`:
-    1. File has `.mjs` extension.
-    2. File has `.js` extension and `package.json` contains `"type": "module"`.
-    3. File has `.js` extension, no `"type": "commonjs"` in `package.json`, and contains ESM syntax.
-- **Interoperability**:
-  - For tools converting ES Modules to CommonJS, the returned namespace contains `__esModule: true` if the module has a default export.
-  - This property is **experimental** and should not be relied on in CommonJS code directly.
-- **Named Exports & Default Export**:
-  - When an ESM has both named and default exports:
-    - `require()` returns the module namespace object.
-    - Default export is in `.default` property (like `import()`).
-    - CommonJS consumers can access named exports via the default export.
-- **Top-Level Await**:
-  - If an ESM contains top-level `await` or the module graph includes it, **ERR_REQUIRE_ASYNC_MODULE** is thrown.
-  - Users should use `import()` for such modules.
-  - `--experimental-print-required-tla` option allows Node.js to print top-level await locations.
-- **Experimental Feature**:
-  - ES Module loading via `require()` is **experimental**.
-  - Can be disabled with `--no-experimental-require-module`.
-  - To trace the usage of this feature, use `--trace-require-module`.
-  - Can be detected by checking if `process.features.require_module` is `true`.
+const server = http.createServer(function (_req, res) {
+  res.writeHead(200);
+  res.end("Hello, World!");
+});
+server.listen(8080);
+```
 
-## Caching
+- The `http` module can be imported to create a simple Node server
+  - Is identified by the `require()` via the string `"http"` which always points to the **Node internal module**
+  - `require("http")` is handled like every other function invocation
 
-- Modules are **cached** after being loaded the first time.
-- Multiple calls to `require('foo')` return the **same object** if the file path resolves identically.
-- Module code is **not re-executed** on subsequent `require()` calls (unless `require.cache` is modified).
-- This allows:
-  - Reuse of loaded modules.
-  - Support for **cyclic dependencies** by returning partially constructed exports.
-- To execute module code multiple times:
-  - **Export a function**.
-  - **Call the function** each time execution is needed.
+## Importing NPM dependencies
 
-### Module caching caveats
+- Similar to how you import and use modules from NPM packages
+  - Require you to install via your package manager (eg. `npm install`, `pnpm add`)
 
-- Modules are **cached based on their resolved filename**.
-- `require('foo')` may return **different objects** if the resolution leads to **different files** (e.g., due to different calling module locations).
-- On **case-insensitive file systems** (e.g., Windows/macOS), filenames like `'./foo'` and `'./FOO'` may refer to the **same file**, but:
-  - Node treats them as **different modules**.
-  - They are **cached separately** and **executed separately**.
+```js
+const chalk = require("chalk");
 
-## Built-in modules
+console.log(chalk.blue("Hello world printed in blue"));
+```
 
-- Node.js includes **built-in modules** compiled into the binary, located in the `lib/` folder of the source.
-- Built-in modules can be loaded using the **`node:` prefix** (e.g., `require('node:http')`), which **bypasses the require cache**.
-- Some built-in modules are **always loaded preferentially**, even if a file with the same name exists (e.g., `require('http')` loads the built-in module, not a local file).
-- A list of all built-in modules is available via `module.builtinModules`.
-  - The list **excludes the `node:` prefix**, except for modules that **require it explicitly**.
+## Exporting
 
-### Built-in modules with mandatory `node:` prefix
+- `export` keyword is fundamental part of module system
+  - Allows the exposure of _specific_ parts of your code to be used in other files
+    - Can expose functions or classes
+- In using `export`, you can make this code available to other parts of your application or even in entirely separate files
+  - Enables encapsulation within its own module, promoting code modularity and prevent unwanted access to internal functionalities
 
-- Some built-in modules **must be required using the `node:` prefix** (e.g., `require('node:test')`).
-- This requirement avoids **conflicts with user-installed packages** that may use the same names.
-- Currently, the modules that require the `node:` prefix are:
-  - [`node:sea`](https://nodejs.org/api/single-executable-applications.html#single-executable-application-api)
-  - [`node:sqlite`](https://nodejs.org/api/sqlite.html)
-  - [`node:test`](https://nodejs.org/api/test.html)
-  - [`node:test/reporters`](https://nodejs.org/api/test.html#test-reporters)
-- These modules appear in [`module.builtinModules`](https://nodejs.org/api/module.html#modulebuiltinmodules) **with the `node:` prefix included**.
+### Exporting own code
 
-## Cycles
+- To import code, CommonJS first needs to be told which parts of the code should be accessible to other modules
 
-- When circular `require()` calls occur, a module may be **incomplete** when it's returned to another module.
-- For example, if **Module A requires Module B**, and **Module B requires Module A** in return:
-  - Node.js avoids an infinite loop by returning a **partially completed export** of Module A to Module B.
-- This allows both modules to finish loading, but each must handle the possibility of **incomplete data** during the process.
-- Once all modules are fully loaded, their exports are complete and consistent.
-- **Careful design** is needed to ensure cyclic dependencies work properly without causing unexpected behavior.
+```js
+// logger.js
+const chalk = require("chalk");
 
-## File modules
+exports.logInfo = function (message) {
+  console.log(chalk.blue(message));
+};
 
-- If the exact filename isn't found, Node.js tries adding extensions in this order: **`.js` → `.json` → `.node`**.
-- For files with **non-standard extensions** (e.g., `.cjs`), the **full filename with extension** must be provided.
-- File types are handled as follows:
-  - `.json`: Parsed as JSON text.
-  - `.node`: Treated as compiled addons via `process.dlopen()`.
-  - Others/no extension: Parsed as JavaScript.
-- Path rules for `require()`:
-  - `'/'` prefix: Treated as an **absolute path**.
-  - `'./'` or `'../'`: Treated as **relative to the calling file**.
-  - No prefix: Treated as a **core module** or **resolved from `node_modules`**.
-- If the module path is invalid or not found, a **`MODULE_NOT_FOUND` error** is thrown.
+exports.logError = function logError(message) {
+  console.log(chalk.red(message));
+};
 
-## Folders as modules
+exports.defaultMessage = "Hello World";
+```
 
-- A folder can be passed to `require()` in three ways:
-  1. **With a `package.json` file**: If the folder contains a `package.json` with a "main" entry, Node.js will attempt to load the specified main module.
-  2. **Without a `package.json` file**: If there's no `package.json`, Node.js will try loading `index.js` or `index.node` from the directory.
-  3. **If neither option works**: Node.js will throw a `MODULE_NOT_FOUND` error.
-- For `import()` calls, using folders as modules results in an **`ERR_UNSUPPORTED_DIR_IMPORT`** error.
-- **Package subpath exports or subpath imports** can provide similar functionality, allowing better organization while supporting both `require()` and `import()`.
+- `logInfo()` and `logError()` are added to the `exports` object and `defaultMessage` is an example of how [default exports](#Default%20exports) can be combined
 
-## Loading from `node_modules` folders
+- To use the exports in another file, you just need to add the `require`
+  - Uses a relative file path and returns whatever was put into the `exports` object
 
-- If the module identifier does not:
-  1. Belong to a built-in module, and
-  2. Start with `'/'`, `'../'`, or `'./'`,
-     Then Node.js starts from the current module's directory and looks for the module in the `/node_modules` folder.
-- If not found there, it moves up to the parent directory and continues searching until it reaches the root of the filesystem.
-- Example resolution path order:
-  - `/home/ry/projects/node_modules/bar.js`
-  - `/home/ry/node_modules/bar.js`
-  - `/home/node_modules/bar.js`
-  - `/node_modules/bar.js`
-- This behavior allows **localizing dependencies** to avoid conflicts.
-- To require specific files or submodules in a module, a **path suffix** can be used (e.g., `require('example-module/path/to/file')`), and it follows the same resolution rules.
+```js
+// index.js
+const logger = require("./logger");
 
-## Loading from the global folders
+logger.logInfo(`${logger.defaultMessage} printed in blue`);
+logger.logError("some error message printed in red");
+```
 
-- The **`NODE_PATH`** environment variable allows Node.js to search additional **absolute paths** for modules if they are not found in the default locations.
-  - On **Windows**, paths are delimited by semicolons (`;`).
-  - **`NODE_PATH`** is less necessary now due to the established module resolution system, but still supported.
-  - Issues can arise when the **`NODE_PATH`** isn't set correctly, leading to loading unexpected versions or modules.
-- In addition to `NODE_PATH`, Node.js searches these **global folders** for modules:
-  1. `$HOME/.node_modules`
-  2. `$HOME/.node_libraries`
-  3. `$PREFIX/lib/node`
-  - `$HOME` refers to the user's home directory, and `$PREFIX` is the configured Node.js installation prefix.
-- It's **recommended** to place dependencies in the **local `node_modules` folder** for faster and more reliable module loading.
+### `module.exports` vs `exports`
+
+- `exports` is read-only
+  - will always remain the same object instance and _cannot be overwritten_
+  - only a shortcut to `exports` property of the `module` object
+
+```js
+// logger.js
+const chalk = require("chalk");
+
+function info(message) {
+  console.log(chalk.blue(message));
+}
+
+function error(message) {
+  console.log(chalk.red(message));
+}
+
+const defaultMessage = "Hello World";
+
+module.exports = {
+  logInfo: info,
+  logError: error,
+  defaultMessage,
+};
+
+// can also be
+
+const chalk = require("chalk");
+
+exports.logInfo = function (message) {
+  console.log(chalk.blue(message));
+};
+
+exports.logError = function logError(message) {
+  console.log(chalk.red(message));
+};
+
+exports.defaultMessage = "Hello World";
+```
+
+- rather than assigning functions _directly to an object_, they can be first declared and then another object can be created and assigned to `module.exports`
+- exports don’t always have to be objects, they can also be **classes**
+
+```js
+// logger.js
+const chalk = require("chalk");
+
+class Logger {
+  static defaultMessage = "Hello World";
+
+  static info(message) {
+    console.log(chalk.blue(message));
+  }
+
+  static error(message) {
+    console.log(chalk.red(message));
+  }
+}
+
+module.exports = Logger;
+```
+
+### Default exports
+
+- Allow for a **single value** per file
+- Done using the `export default` syntax
+- This means, when you import from that file in another part of your code, you **do not** need curly braces `{ }` around the import statement
+  - Can give it any name you want during import, making it more convenient to use
+
+```js wrap
+// 📂 math.js
+const add = (a, b) => a + b;
+export default add;
+
+// 📂 main.js
+import myAddFunction from "./math.js";
+const result = myAddFunction(5, 10); // This will call the add function from math.js and store the result in the 'result' variable.
+```
+
+### Named exports
+
+- Allow for _multiple_ exports per file
+  - Name can be specified for each part individually
+- Gives more control over the parts of code you want to share with other modules
+  - Must use _exact_ names that were used during the export, ensuring that you can access and use the specific functions from the source file
+
+```js
+// 📂 math.js
+export function add(a, b) {
+  return a + b;
+}
+
+export function subtract(a, b) {
+  return a - b;
+}
+
+// 📂 main.js
+import { add, subtract } from "./math.js";
+
+const result1 = add(5, 3); // result1 will be 8
+const result2 = subtract(10, 4); // result2 will be 6
+```
+
+### Named vs default
+
+| Feature                | Named Exports                                           | Default Export                                                |
+| ---------------------- | ------------------------------------------------------- | ------------------------------------------------------------- |
+| **Number of exports**  | Can export multiple values, functions, or classes       | Can only export one main value, function, or class            |
+| **Import syntax**      | Use curly braces `{}` and must use exact exported names | No curly braces needed; can name the import whatever you like |
+| **Use case**           | Best for exporting multiple distinct things             | Best for highlighting a single primary export                 |
+| **Naming flexibility** | Must use the same names as exported                     | Can rename during import                                      |
+
+### How to combine
+
+- You can export _one_ main thing using `export default` while also exporting _multiple additional values_ using `export`
+- Flexibility allows efficient organization and easier access and use of exported functionalities
+
+## Importing
+
+### Specific properties
+
+- Since certain aspects of the code imported is needed in some cases, JS’s destructuring feature comes in handy
+
+```js
+// index.js
+const { logError } = require("./logger");
+
+logError("some error message printed in red");
+```
+
+## Importing specific properties
+
+- Since only certain aspects of code may need to be imported,
