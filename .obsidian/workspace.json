@@ -11,10 +11,14 @@
             "id": "79e0138a0aa1ed3a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "JavaScript/Tools/NodeJS/Async Programming/General - Async Programming.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "General - Async Programming"
             }
           }
         ]
@@ -161,7 +165,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -175,9 +180,13 @@
   },
   "active": "2a0f8700492348cb",
   "lastOpenFiles": [
+    "Untitled.md",
+    "JavaScript/Tools/NodeJS/Async Programming/General - Async Programming.md",
+    "JavaScript/Synchronous Programming.md",
+    "JavaScript/Tools/NodeJS/Async Programming/Untitled.md",
+    "JavaScript/Tools/NodeJS/Error Handling/Using Debugger.md",
     "JavaScript/Tools/NodeJS/Async Programming",
     "JavaScript/Tools/NodeJS/Error Handling/Stack Trace.md",
-    "JavaScript/Tools/NodeJS/Error Handling/Using Debugger.md",
     "JavaScript/Tools/NodeJS/Error Handling/Async Errors.md",
     "JavaScript/Objects/Promises.md",
     "JavaScript/Objects/Built-in Objects/Promise.md",
@@ -200,16 +209,12 @@
     "JavaScript/Tools/NodeJS/npm",
     "JavaScript/Tools/NodeJS/NodeJS Modules/global keyword.md",
     "JavaScript/Tools/NodeJS/What is NodeJS.md",
-    "JavaScript/Tools/NodeJS/NodeJS Modules/CommonJS.md",
-    "JavaScript/Tools/NodeJS/NodeJS Modules/ESM.md",
     "JavaScript/Tools/NodeJS/NodeJS Modules",
-    "JavaScript/Tools/ESBuild.md",
     "JavaScript/Tools/NodeJS",
     "JavaScript/Frameworks/React/Components/Types of React Components",
     "JavaScript/Frameworks/React/Components",
     "JavaScript/Tools",
     "JavaScript/Frameworks/React",
-    "Untitled",
-    "JavaScript/Objects/Built-in Objects/Untitled"
+    "Untitled"
   ]
 }
