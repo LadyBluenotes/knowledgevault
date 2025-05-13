@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "b5f314d672bec16a",
+        "id": "f7968716c33290aa",
         "type": "tabs",
         "children": [
           {
-            "id": "d96cbe49dd827ddd",
+            "id": "79e0138a0aa1ed3a",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -173,8 +173,23 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "d96cbe49dd827ddd",
+  "active": "2a0f8700492348cb",
   "lastOpenFiles": [
+    "JavaScript/Tools/NodeJS/Async Programming",
+    "JavaScript/Tools/NodeJS/Error Handling/Stack Trace.md",
+    "JavaScript/Tools/NodeJS/Error Handling/Using Debugger.md",
+    "JavaScript/Tools/NodeJS/Error Handling/Async Errors.md",
+    "JavaScript/Objects/Promises.md",
+    "JavaScript/Objects/Built-in Objects/Promise.md",
+    "JavaScript/Tools/NodeJS/Error Handling/Assertion Errors.md",
+    "JavaScript/Tools/NodeJS/Error Handling/Uncaught Exceptions.md",
+    "JavaScript/Tools/NodeJS/Error Handling/JavaScript Errors.md",
+    "JavaScript/Objects/Built-in Objects/Error.md",
+    "JavaScript/Objects/Built-in Objects/Global.md",
+    "JavaScript/Tools/NodeJS/Error Handling/User Specified Errors.md",
+    "JavaScript/Tools/NodeJS/Error Handling/System Errors.md",
+    "JavaScript/Tools/NodeJS/Error Handling/General - Error Handling.md",
+    "JavaScript/Tools/NodeJS/Error Handling",
     "JavaScript/Tools/NodeJS/npm/General - npm.md",
     "JavaScript/Tools/NodeJS/npm/Untitled.md",
     "JavaScript/Tools/NodeJS/npm/Installing packages.md",
@@ -189,27 +204,12 @@
     "JavaScript/Tools/NodeJS/NodeJS Modules/ESM.md",
     "JavaScript/Tools/NodeJS/NodeJS Modules",
     "JavaScript/Tools/ESBuild.md",
-    "JavaScript/Frameworks/React/Components/Types of React Components/General - Types of React Components.md",
-    "JavaScript/Frameworks/React/Components/Types of React Components/React Function Components.md",
-    "JavaScript/Frameworks/React/Components/Basics.md",
-    "JavaScript/Frameworks/React/Rendering.md",
-    "JavaScript/Frameworks/React/Hooks.md",
-    "React Components.md",
-    "[[Overview.md",
-    "React Class Components (not recommended).md",
-    "JavaScript/Data Types/BigInt.md",
-    "JavaScript/Data Types/`typeof` Operator.md",
-    "[[.md",
-    "[[NodeJS.md",
     "JavaScript/Tools/NodeJS",
-    "Definitions/All.md",
     "JavaScript/Frameworks/React/Components/Types of React Components",
-    "Computer Science/Object Orientated Programming.md",
     "JavaScript/Frameworks/React/Components",
     "JavaScript/Tools",
     "JavaScript/Frameworks/React",
     "Untitled",
-    "JavaScript/Objects/Built-in Objects/Untitled",
-    "JavaScript/Objects/Built-in Objects/Fundamental Objects"
+    "JavaScript/Objects/Built-in Objects/Untitled"
   ]
 }

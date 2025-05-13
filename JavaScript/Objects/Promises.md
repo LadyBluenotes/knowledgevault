@@ -10,6 +10,11 @@ date modified: Tuesday, May 6th 2025, 1:56:08 pm
 - Proxy for a value not necessarily known when the promise is created
 - Allows the association of handlers with an asynchronous action's eventual success value or failure reason
   - Return values like synchronous methods: instead of immediately returning the value, the asynchronous method returns a *promise* to supply the value at some point in the future
+- Promises can be created using the `Promise` constructor
+- Functions passed to `Promise` are called **tether functions** and they take the arguments `resolve` and `reject`
+    - If an operation is successful, `resolve` is called
+    - In the case of an error, `reject` is called
+        - Error is passed into `reject` for each error case so that the promise will reject on things like invalid inputs
 
 ## States
 
@@ -19,3 +24,4 @@ A promise is in one of these states: - `pending` - initial state, neither fulfil
   - When either happen, associated handlers queued up by a promise's `then` method are called
 - A promise is settled when _either_ fulfilled or rejected but _not pending_
 - _Resolved_ - the promise is settled or "locked in" to match the eventual state of another promise and further resolving or rejecting it has **no effect**
+

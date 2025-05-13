@@ -1,0 +1,2 @@
+- Way to find bugs and solve them as quickly as possible
+- Errors in Node can either be operation or programmer errors

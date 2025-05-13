@@ -228,3 +228,8 @@ Used to keep the JS ecosystem healthy, reliable, and secure.
 When there are significant updates to an npm package, it is recommended to publish a new version of the package with an updated version number in the `package.json` file that follows the semantic versioning spec. Following this, helps other developers who depend on your code understand the extent of the changes in a given version, and adjust their own code if necessary.
 
 If there is a change that breaks a package dependency, it is strongly recommended incrementing the version **major number**.
+
+---
+# stack trace
+
+A stack trace is a list of places where an error has occurred. Tells you the call hierarchy that led to the failure
