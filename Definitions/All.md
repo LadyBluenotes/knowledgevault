@@ -217,3 +217,14 @@ Allow for flexible dependency management in software systems, as in the case of 
 Two main types:
 1. **Soft (symbolic link):** Points to a file or directory by name and path. If target file or directory is moved or deleted, symlink becomes broken (ie. no longer points to a valid location
 2. **Hard:** Points directly to data blocks on the disk. More like an alias for original file and remains valid even if original file is renamed or moved (though not across different filesystems)
+
+---
+# semver rule
+
+*semantic versioning*
+
+Used to keep the JS ecosystem healthy, reliable, and secure.
+
+When there are significant updates to an npm package, it is recommended to publish a new version of the package with an updated version number in the `package.json` file that follows the semantic versioning spec. Following this, helps other developers who depend on your code understand the extent of the changes in a given version, and adjust their own code if necessary.
+
+If there is a change that breaks a package dependency, it is strongly recommended incrementing the version **major number**.
