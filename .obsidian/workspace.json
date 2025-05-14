@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Interview Questions/Data Structures and Algorithms.md",
+                "file": "Interview Questions/React.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Data Structures and Algorithms"
+              "title": "React"
             }
           }
         ]
@@ -180,10 +180,10 @@
   },
   "active": "8ac657f035a1439b",
   "lastOpenFiles": [
-    "Interview Questions/React.md",
-    "Interview Questions/Data Structures and Algorithms.md",
     "Interview Questions/NodeJS.md",
     "Interview Questions/JavaScript.md",
+    "Interview Questions/Data Structures and Algorithms.md",
+    "Interview Questions/React.md",
     "Interview Prep/Tables.md",
     "Interview Questions",
     "Interview Prep/Questions & Answers.md",
