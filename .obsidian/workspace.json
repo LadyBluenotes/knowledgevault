@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Interview Questions/React.md",
+                "file": "Interview Questions/Dotmatics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "React"
+              "title": "Dotmatics"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 241.5,
-    "collapsed": true
+    "width": 241.5
   },
   "right": {
     "id": "4ee7edcc9c21401c",
@@ -181,10 +180,11 @@
   },
   "active": "8ac657f035a1439b",
   "lastOpenFiles": [
+    "Interview Questions/React.md",
+    "Interview Questions/Dotmatics.md",
     "Interview Questions/NodeJS.md",
     "Interview Questions/JavaScript.md",
     "Interview Questions/Data Structures and Algorithms.md",
-    "Interview Questions/React.md",
     "Interview Prep/Tables.md",
     "Interview Questions",
     "Interview Prep/Questions & Answers.md",
@@ -213,7 +213,6 @@
     "JavaScript/Data Structures",
     "JavaScript/Debugging.md",
     "JavaScript/NodeJS/Testing.md",
-    "JavaScript/NodeJS/Error Handling/Assertion Errors.md",
     "JavaScript/NodeJS/Async Programming",
     "JavaScript/NodeJS/Error Handling",
     "JavaScript/NodeJS/npm",
