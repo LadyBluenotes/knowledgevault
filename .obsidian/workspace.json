@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "bcb275d7fea4e2a7",
+        "id": "7bd75701f5b6254a",
         "type": "tabs",
         "children": [
           {
-            "id": "8ac657f035a1439b",
+            "id": "dc5b161765d81471",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Interview Questions/Dotmatics.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Dotmatics"
+              "title": "New tab"
             }
           }
         ]
@@ -178,13 +174,13 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "8ac657f035a1439b",
+  "active": "2a0f8700492348cb",
   "lastOpenFiles": [
     "Interview Questions/React.md",
-    "Interview Questions/Dotmatics.md",
     "Interview Questions/NodeJS.md",
     "Interview Questions/JavaScript.md",
     "Interview Questions/Data Structures and Algorithms.md",
+    "Interview Questions/Dotmatics.md",
     "Interview Prep/Tables.md",
     "Interview Questions",
     "Interview Prep/Questions & Answers.md",
