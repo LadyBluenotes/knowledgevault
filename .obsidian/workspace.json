@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JavaScript/Frameworks/SolidJS/Types.md",
+                "file": "JavaScript/Frameworks/SolidJS/Types/Imported Types.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Types"
+              "title": "Imported Types"
             }
           }
         ]
@@ -180,8 +180,10 @@
   },
   "active": "623f64047279c229",
   "lastOpenFiles": [
+    "JavaScript/Frameworks/SolidJS/Types/API Types.md",
+    "JavaScript/Frameworks/SolidJS/Types/Imported Types.md",
+    "JavaScript/Frameworks/SolidJS/Types",
     "JavaScript/Frameworks/SolidJS/API.md",
-    "JavaScript/Frameworks/SolidJS/Types.md",
     "JavaScript/Frameworks/SolidJS",
     "Interview Questions/React.md",
     "Interview Questions/NodeJS.md",
@@ -211,11 +213,8 @@
     "JavaScript/Frameworks/React/General - React.md",
     "JavaScript/Data Structures/JSON.md",
     "JavaScript/Data Structures/Keyed Colelctions",
-    "JavaScript/Data Structures/General - Data Structure.md",
-    "JavaScript/NodeJS/Debugging.md",
     "JavaScript/Data Structures",
     "JavaScript/NodeJS/Async Programming",
-    "JavaScript/NodeJS/Error Handling",
-    "JavaScript/NodeJS/npm"
+    "JavaScript/NodeJS/Error Handling"
   ]
 }

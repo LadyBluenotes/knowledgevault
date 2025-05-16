@@ -1,3 +1,11 @@
+---
+title: Imported Types
+date created: Friday, May 16th 2025, 11:37:50 am
+date modified: Friday, May 16th 2025, 11:44:27 am
+---
+
+# Imported Types
+
 ## Basic
 
 ### Accessor
@@ -12,6 +20,30 @@ type Accessor<T> = () => T;
 
 ```ts
 type Ref<T> = T | ((val: T) => void);
+```
+
+### Setter
+
+```ts
+type Setter<in out T> = {
+  <U extends T>(
+    ...args: undefined extends T
+      ? []
+      : [value: Exclude<U, Function> | ((prev: T) => U)]
+  ): undefined extends T ? undefined : U;
+
+  <U extends T>(value: (prev: T) => U): U;
+
+  <U extends T>(value: Exclude<U, Function>): U;
+
+  <U extends T>(value: Exclude<U, Function> | ((prev: T) => U)): U;
+};
+```
+
+### Signal
+
+```ts
+type Signal<T> = [get: Accessor<T>, set: Setter<T>];
 ```
 
 ## Components
@@ -105,13 +137,123 @@ type ParentProps<P extends Record<string, any> = {}> = P & {
 - Optional `children` prop
   - `JSX.Element` ← Allows elements, arrays, functions, etc.
 
-### Void Props
+### `SplitProps`
+
+```ts
+type SplitProps<T, K extends (readonly (keyof T)[])[]> = [
+  ...{
+    [P in keyof K]: P extends `${number}`
+      ? Pick<T, Extract<K[P], readonly (keyof T)[]>[number]>
+      : never;
+  },
+
+  {
+    [P in keyof T as Exclude<P, K[number][number]>]: T[P];
+  },
+];
+```
+
+### `VoidProps`
 
 - Use to prevent accidentally passing `children` to components that would silently throw them away
-- - Extends to forbid the `children` prop
+- Extends to forbid the `children` prop
 
 ```ts
 type VoidProps<P extends Record<string, any> = {}> = P & {
   children?: never;
 };
+```
+
+## Resource
+
+## Interfaces
+
+```ts
+interface Unresolved {
+  state: "unresolved";
+  loading: false;
+  error: undefined;
+  latest: undefined;
+  (): undefined;
+}
+interface Pending {
+  state: "pending";
+  loading: true;
+  error: undefined;
+  latest: undefined;
+  (): undefined;
+}
+interface Ready<T> {
+  state: "ready";
+  loading: false;
+  error: undefined;
+  latest: T;
+  (): T;
+}
+interface Refreshing<T> {
+  state: "refreshing";
+  loading: true;
+  error: undefined;
+  latest: T;
+  (): T;
+}
+interface Errored {
+  state: "errored";
+  loading: false;
+  error: any;
+  latest: never;
+  (): never;
+}
+```
+
+### `InitializedResource`
+
+```ts
+type InitializedResource<T> = Ready<T> | Refreshing<T> | Errored;
+```
+
+### `Resource`
+
+```ts
+type Resource<T> = Unresolved | Pending | Ready<T> | Refreshing<T> | Errored;
+```
+
+### `ResourceActions`
+
+```ts
+type ResourceActions<T, R = unknown> = {
+  mutate: Setter<T>;
+  refetch: (info?: R) => T | Promise<T> | undefined | null;
+};
+```
+
+### `ResourceFetcher`
+
+```ts
+type ResourceFetcher<S, T, R = unknown> = (
+  k: S,
+
+  info: ResourceFetcherInfo<T, R>,
+) => T | Promise<T>;
+```
+
+### `ResourceFetcherInfo`
+
+```ts
+type ResourceFetcherInfo<T, R = unknown> = {
+  value: T | undefined;
+
+  refetching: R | boolean;
+};
+```
+
+### `ResourceSource`
+
+```ts
+type ResourceSource<S> =
+  | S
+  | false
+  | null
+  | undefined
+  | (() => S | false | null | undefined);
 ```
