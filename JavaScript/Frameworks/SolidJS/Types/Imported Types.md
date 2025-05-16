@@ -10,6 +10,8 @@ date modified: Friday, May 16th 2025, 11:44:27 am
 
 ### `Accessor`
 
+- Function that returns the current value and registers each call to the reactive root
+
 ```ts
 type Accessor<T> = () => T;
 ```
@@ -23,6 +25,8 @@ type Ref<T> = T | ((val: T) => void);
 ```
 
 ### `Setter`
+
+- A function that allows directly setting or mutating a value
 
 ```ts
 type Setter<in out T> = {
@@ -165,46 +169,6 @@ type VoidProps<P extends Record<string, any> = {}> = P & {
 ```
 
 ## Resource
-
-## Interfaces
-
-```ts
-interface Unresolved {
-  state: "unresolved";
-  loading: false;
-  error: undefined;
-  latest: undefined;
-  (): undefined;
-}
-interface Pending {
-  state: "pending";
-  loading: true;
-  error: undefined;
-  latest: undefined;
-  (): undefined;
-}
-interface Ready<T> {
-  state: "ready";
-  loading: false;
-  error: undefined;
-  latest: T;
-  (): T;
-}
-interface Refreshing<T> {
-  state: "refreshing";
-  loading: true;
-  error: undefined;
-  latest: T;
-  (): T;
-}
-interface Errored {
-  state: "errored";
-  loading: false;
-  error: any;
-  latest: never;
-  (): never;
-}
-```
 
 ### `InitializedResource`
 
