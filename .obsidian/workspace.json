@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JavaScript/Frameworks/SolidJS/Types/Imported Types.md",
+                "file": "JavaScript/Frameworks/SolidJS/API.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Imported Types"
+              "title": "API"
             }
           }
         ]
@@ -180,10 +180,11 @@
   },
   "active": "623f64047279c229",
   "lastOpenFiles": [
-    "JavaScript/Frameworks/SolidJS/Types/API Types.md",
+    "JavaScript/Frameworks/NextJS.md",
     "JavaScript/Frameworks/SolidJS/Types/Imported Types.md",
-    "JavaScript/Frameworks/SolidJS/Types",
     "JavaScript/Frameworks/SolidJS/API.md",
+    "JavaScript/Frameworks/SolidJS/Types/Function Types.md",
+    "JavaScript/Frameworks/SolidJS/Types",
     "JavaScript/Frameworks/SolidJS",
     "Interview Questions/React.md",
     "Interview Questions/NodeJS.md",

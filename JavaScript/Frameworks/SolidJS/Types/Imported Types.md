@@ -8,13 +8,13 @@ date modified: Friday, May 16th 2025, 11:44:27 am
 
 ## Basic
 
-### Accessor
+### `Accessor`
 
 ```ts
 type Accessor<T> = () => T;
 ```
 
-### Ref
+### `Ref`
 
 - Type of `props.ref` for use in `Component` or `props`
 
@@ -22,7 +22,7 @@ type Accessor<T> = () => T;
 type Ref<T> = T | ((val: T) => void);
 ```
 
-### Setter
+### `Setter`
 
 ```ts
 type Setter<in out T> = {
@@ -40,7 +40,7 @@ type Setter<in out T> = {
 };
 ```
 
-### Signal
+### `Signal`
 
 ```ts
 type Signal<T> = [get: Accessor<T>, set: Setter<T>];
@@ -48,7 +48,7 @@ type Signal<T> = [get: Accessor<T>, set: Setter<T>];
 
 ## Components
 
-### Component
+### `Component`
 
 - General component with no implicit `children` prop
 - Can specify one as in `Component<{name: String, children: JSX.Element}>`
@@ -69,7 +69,7 @@ type FlowComponent<
 > = Component<FlowProps<P, C>>;
 ```
 
-### Parent Component
+### `ParentComponent`
 
 - Use for components where you need a specific child type, typically a function that receives specific argument types
 
@@ -81,7 +81,7 @@ type ParentComponent<P extends Record<string, any> = {}> = Component<
 
 - Extend props to require `children` prop with specified type
 
-### Void Component
+### `VoidComponent`
 
 - Used to prevent accidentally passing `children` to to components that would silently throw them way
 - Forbids the `children` prop
@@ -94,7 +94,7 @@ type VoidComponent<P extends Record<string, any> = {}> = Component<
 
 ## Props
 
-### Component Props
+### `ComponentProps`
 
 - Takes the props of the passed component and returns its type
 
@@ -107,7 +107,7 @@ type ComponentProps<T extends ValidComponent> =
       : Record<string, unknown>;
 ```
 
-### Flow Props
+### `FlowProps`
 
 - Used for components where you need a specific child type, typically a function that receives specific argument type
 - Extend to require `children` prop with the specified type
@@ -118,13 +118,13 @@ type FlowProps<P extends Record<string, any> = {}, C = JSX.Element> = P & {
 };
 ```
 
-### Merge Props
+### `MergeProps`
 
 ```ts
 type MergeProps<T extends unknown[]> = Simplify<_MergeProps<T>>;
 ```
 
-### Parent Props
+### `ParentProps`
 
 - Use for components that you want to accept children
 
@@ -212,6 +212,23 @@ interface Errored {
 type InitializedResource<T> = Ready<T> | Refreshing<T> | Errored;
 ```
 
+### `InitializedResourceOptions`
+
+```ts
+type InitializedResourceOptions<T, S = unknown> = ResourceOptions<T, S> & {
+  initialValue: T;
+};
+```
+
+### `InitializedResourceReturn`
+
+```ts
+type InitializedResourceReturn<T, R = unknown> = [
+  InitializedResource<T>,
+  ResourceActions<T, R>,
+];
+```
+
 ### `Resource`
 
 ```ts
@@ -245,6 +262,35 @@ type ResourceFetcherInfo<T, R = unknown> = {
 
   refetching: R | boolean;
 };
+```
+
+### `ResourceOptions`
+
+```ts
+type ResourceOptions<T, S = unknown> = {
+  initialValue?: T;
+  name?: string;
+  deferStream?: boolean;
+  ssrLoadFrom?: "initial" | "server";
+  storage?: (
+    init: T | undefined,
+  ) => [Accessor<T | undefined>, Setter<T | undefined>];
+  onHydrated?: (
+    k: S | undefined,
+    info: {
+      value: T | undefined;
+    },
+  ) => void;
+};
+```
+
+### `ResourceReturn`
+
+```ts
+type ResourceReturn<T, R = unknown> = [
+  Resource<T>,
+  ResourceActions<T | undefined, R>,
+];
 ```
 
 ### `ResourceSource`
