@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "7bd75701f5b6254a",
+        "id": "0061799fb3760eed",
         "type": "tabs",
         "children": [
           {
-            "id": "dc5b161765d81471",
+            "id": "623f64047279c229",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "JavaScript/Frameworks/SolidJS/Types.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Types"
             }
           }
         ]
@@ -174,8 +178,11 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "2a0f8700492348cb",
+  "active": "623f64047279c229",
   "lastOpenFiles": [
+    "JavaScript/Frameworks/SolidJS/API.md",
+    "JavaScript/Frameworks/SolidJS/Types.md",
+    "JavaScript/Frameworks/SolidJS",
     "Interview Questions/React.md",
     "Interview Questions/NodeJS.md",
     "Interview Questions/JavaScript.md",
@@ -207,11 +214,8 @@
     "JavaScript/Data Structures/General - Data Structure.md",
     "JavaScript/NodeJS/Debugging.md",
     "JavaScript/Data Structures",
-    "JavaScript/Debugging.md",
-    "JavaScript/NodeJS/Testing.md",
     "JavaScript/NodeJS/Async Programming",
     "JavaScript/NodeJS/Error Handling",
-    "JavaScript/NodeJS/npm",
-    "JavaScript/NodeJS/NodeJS Modules"
+    "JavaScript/NodeJS/npm"
   ]
 }
