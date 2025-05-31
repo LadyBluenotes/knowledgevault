@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JavaScript/Frameworks/React/Rendering/General - Rendering.md",
+                "file": "JavaScript/NodeJS/npm/Updating Packages.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "General - Rendering"
+              "title": "Updating Packages"
             }
           }
         ]
@@ -180,6 +180,10 @@
   },
   "active": "623f64047279c229",
   "lastOpenFiles": [
+    "JavaScript/NodeJS/npm/Running scripts.md",
+    "JavaScript/NodeJS/npm/Installing packages.md",
+    "JavaScript/NodeJS/npm/npx.md",
+    "JavaScript/Frameworks/React/Rendering/General - Rendering.md",
     "JavaScript/Frameworks/React/Rendering/Component life cycle.md",
     "JavaScript/Frameworks/SolidJS/API.md",
     "JavaScript/Frameworks/SolidJS/Types/Interface.md",
@@ -202,7 +206,6 @@
     "JavaScript/Frameworks/React/State Management.md",
     "JavaScript/Frameworks/React/Rendering/Render props.md",
     "JavaScript/Frameworks/React/Rendering/List and keys.md",
-    "JavaScript/Frameworks/React/Rendering/General - Rendering.md",
     "JavaScript/Frameworks/React/Components/Types of React Components/General - Types of React Components.md",
     "JavaScript/Frameworks/React/Components/Types of React Components/React Function Components.md",
     "JavaScript/Frameworks/React/Rendering",
@@ -210,9 +213,6 @@
     "JavaScript/Data Structures/Keyed Collections.md",
     "JavaScript/Objects/Built-in Objects/Weak Map.md",
     "JavaScript/Objects/Built-in Objects/Set.md",
-    "JavaScript/Objects/Built-in Objects/Map.md",
-    "JavaScript/Data Structures/Keyed Colelctions/Map.md",
-    "JavaScript/Frameworks/React/General - React.md",
     "JavaScript/Data Structures/Keyed Colelctions",
     "JavaScript/Data Structures",
     "JavaScript/NodeJS/Async Programming",
